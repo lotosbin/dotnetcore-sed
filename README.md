@@ -1,16 +1,12 @@
-﻿#
-##
-```
-dotnet publish -r osx-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true --self-contained true
-dotnet publish -r win-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true --self-contained true
-dotnet publish -r linux-x64 /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true --self-contained true
+﻿# dotnetcore-sed
+
+# Usage
+- replace aaa with bbb in text `aaabbb`
+```shell
+dotnetcore-sed aaa bbb aaabbb
 ```
 
-```
-mkdir dist
-mkdir dist/osx
-cp -r ./bin/Debug/net5.0/osx-x64/publish/* dist/osx/
-
-mkdir dist/linux
-cp -r ./bin/Debug/net5.0/linux-x64/publish/* dist/linux/
+- replace aaa with bbb in file
+```shell
+dotnetcore-sed -i "" -e s/aaa/bbb/ sample.txt
 ```
